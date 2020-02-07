@@ -1,8 +1,14 @@
 @import "colors";
 
 %display-config-vertical {
+  align-items: center;
 	display: flex;
-	align-items: center;
+}
+
+%container-book-elements-height {
+  height: 368px;
+  max-height: 100%;
+  height: 368px;
 }
 
 * {
@@ -10,52 +16,50 @@
 }
 
 .general-container {
-	background-color: $general-background-color;
-	@extend %display-config-vertical;
-	justify-content: center;
+  background-color: $general-background-color;
+  @extend %display-config-vertical;
 	height: 100vh;
+	justify-content: center;
 }
 
 .container-book {
+  background-color: white;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
+  @extend %display-config-vertical;
   height: 416px;
-  width: 900px;
-	background-color: white;
-	box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
-	@extend %display-config-vertical;
   justify-content: flex-start;
   padding: 40px;
+  width: 900px;
 }
 
 .book-cover {
-  height: 368px;
-  width: 261px;
+  @extend %container-book-elements-height;
   margin-right: 30px;
 }
 
 .book-information {
   display: flex;
+  @extend %container-book-elements-height;
   flex-flow: column nowrap;
-  height: 368px;
 }
 
 .title {
-  color: $detail-book-color;
-  width: 500px;
-	font-size: 32px;
-	font-weight: 700;
-  line-height: 38px;
-  padding: 8px;
-  margin-bottom: 30px;
   border-bottom: 4px solid $underline-color;
+  color: $detail-book-color;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  width: 500px;
 }
 
 .title-description {
   color: $description-book-color;
-  height: 30px;
-  width: 98px;
-	font-size: 24px;
+  font-size: 24px;
 	font-weight: 700;
-	line-height: 28px;
+  height: 30px;
+  line-height: 28px;
+  width: 98px;
 }
 
 .detail {
