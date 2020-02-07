@@ -11,6 +11,12 @@
   height: 368px;
 }
 
+@mixin font-config($size, $weight, $height) {
+  font-size: $size;
+	font-weight: $weight;
+  height: $height;
+}
+
 * {
 	font-family: "Roboto", sans-serif;
 }
@@ -46,8 +52,7 @@
 .title {
   border-bottom: 4px solid $green;
   color: $black;
-  font-size: 32px;
-  font-weight: 700;
+  @include font-config(32px, 700, auto);
   margin-bottom: 30px;
   padding-bottom: 8px;
   width: 500px;
@@ -55,17 +60,14 @@
 
 .title-description {
   color: $grey;
-  font-size: 24px;
-	font-weight: 700;
-  height: 30px;
+  @include font-config(24px, 700, 30px);
   line-height: 28px;
   width: 98px;
 }
 
 .detail {
 	color: $black;
-	font-size: 20px;
-	font-weight: 700;
+  @include font-config(20px, 700, auto);
 	line-height: 24px;
 	margin-bottom: 40px;
 }
