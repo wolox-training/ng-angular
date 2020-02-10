@@ -37,20 +37,25 @@
 }
 
 .book-images {
-  background: url("../images/book-cover.png");
-  background-size: 100% 100%;
+  position: relative;
+
+  &::after {
+    background: url(../images/badge.png) no-repeat;
+    background-size: 100%;
+    content: '';
+    height: 120px;
+    right: 10px;
+    position: absolute;
+    top: -10px;
+    transform: rotate(15deg);
+    width: 70px;
+  }
+}
+
+.book-cover {
   @extend %container-book-elements-height;
   margin-right: 30px;
   width: 245px;
-}
-
-.book-badge {
-  bottom: 15px;
-  height: 100px;
-  left: 185px;
-  width: 77px;
-  position: relative;
-  transform: rotate(15deg);
 }
 
 .book-information {
@@ -88,3 +93,4 @@
   font-size: 20px;
   line-height: 24px;
 }
+
