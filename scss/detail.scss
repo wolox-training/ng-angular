@@ -8,7 +8,6 @@
 %container-book-elements-height {
   height: 368px;
   max-height: 100%;
-  height: 368px;
 }
 
 @mixin font-config($size, $weight) {
@@ -37,9 +36,21 @@
   width: 900px;
 }
 
-.book-cover {
+.book-images {
+  background: url("../images/book-cover.png");
+  background-size: 100% 100%;
   @extend %container-book-elements-height;
   margin-right: 30px;
+  width: 245px;
+}
+
+.book-badge {
+  bottom: 15px;
+  height: 100px;
+  left: 185px;
+  width: 77px;
+  position: relative;
+  transform: rotate(15deg);
 }
 
 .book-information {
