@@ -11,10 +11,9 @@
 	height: 368px;
 }
 
-@mixin font-config($size, $weight, $height) {
+@mixin font-config($size, $weight) {
 	font-size: $size;
 	font-weight: $weight;
-	height: $height;
 }
 
 * {
@@ -52,7 +51,7 @@
 .title {
 	border-bottom: 4px solid $green;
 	color: $black;
-	@include font-config(32px, 700, auto);
+	@include font-config(32px, 700);
 	margin-bottom: 30px;
 	padding-bottom: 8px;
 	width: 500px;
@@ -60,14 +59,15 @@
 
 .title-description {
 	color: $grey;
-	@include font-config(24px, 700, 30px);
+	@include font-config(24px, 700);
+	height: 30px;
 	line-height: 28px;
 	width: 98px;
 }
 
 .detail {
 	color: $black;
-	@include font-config(20px, 700, auto);
+	@include font-config(20px, 700);
 	line-height: 24px;
 	margin-bottom: 40px;
 }
