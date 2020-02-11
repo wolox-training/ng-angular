@@ -1,13 +1,10 @@
 @import "colors";
 
+$container-book-elements-height: 368px;
+
 %display-config-vertical {
   align-items: center;
   display: flex;
-}
-
-%container-book-elements-height {
-  height: 368px;
-  max-height: 100%;
 }
 
 @mixin font-config($size, $weight) {
@@ -32,35 +29,33 @@
   @extend %display-config-vertical;
   height: 416px;
   justify-content: flex-start;
+  max-width: 100%;
   padding: 40px;
-  width: 900px;
-}
-
-.book-images {
   position: relative;
+  width: 900px;
 
   &::after {
     background: url(../images/badge.png) no-repeat;
     background-size: 100%;
     content: '';
     height: 120px;
-    right: 10px;
+    left: 225px;
     position: absolute;
-    top: -10px;
+    top: 15px;
     transform: rotate(15deg);
     width: 70px;
   }
 }
 
 .book-cover {
-  @extend %container-book-elements-height;
+  height: $container-book-elements-height;
   margin-right: 30px;
   width: 245px;
 }
 
 .book-information {
   display: flex;
-  @extend %container-book-elements-height;
+  height: $container-book-elements-height;
   flex-flow: column nowrap;
 }
 
