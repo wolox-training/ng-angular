@@ -20,7 +20,6 @@ $container-book-elements-height: 368px;
   background-color: $light-grey;
   @extend %display-config-vertical;
   height: 100vh;
-  justify-content: center;
 }
 
 .container-book {
@@ -28,14 +27,15 @@ $container-book-elements-height: 368px;
   box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
   @extend %display-config-vertical;
   height: 416px;
-  justify-content: flex-start;
+  margin: 0 auto;
   max-width: 100%;
   padding: 40px;
   position: relative;
   width: 900px;
 
   &::after {
-    background: url(../images/badge.png) no-repeat;
+    background-image: url(../assets/badge.png);
+    background-repeat: no-repeat;
     background-size: 100%;
     content: '';
     height: 120px;
@@ -56,7 +56,7 @@ $container-book-elements-height: 368px;
 .book-information {
   display: flex;
   height: $container-book-elements-height;
-  flex-flow: column nowrap;
+  flex-direction: column;
 }
 
 .title {
@@ -71,9 +71,8 @@ $container-book-elements-height: 368px;
 .title-description {
   color: $grey;
   @include font-config(24px, 700);
-  height: 30px;
   line-height: 28px;
-  width: 98px;
+  max-width: 100%;
 }
 
 .detail {
