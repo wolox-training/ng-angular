@@ -34,8 +34,7 @@ $container-book-elements-height: 368px;
   width: 900px;
 
   &::after {
-    background-image: url(../assets/badge.png);
-    background-repeat: no-repeat;
+    background: url(../assets/badge.png) no-repeat;
     background-size: 100%;
     content: '';
     height: 120px;
@@ -66,13 +65,13 @@ $container-book-elements-height: 368px;
   margin-bottom: 30px;
   padding-bottom: 8px;
   width: 500px;
+  max-width: 100%;
 }
 
 .title-description {
   color: $grey;
   @include font-config(24px, 700);
   line-height: 28px;
-  max-width: 100%;
 }
 
 .detail {
