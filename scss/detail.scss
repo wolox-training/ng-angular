@@ -1,0 +1,89 @@
+@import "colors";
+
+$container-book-elements-height: 368px;
+
+%display-config-vertical {
+  align-items: center;
+  display: flex;
+}
+
+@mixin font-config($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.general-container {
+  background-color: $light-grey;
+  @extend %display-config-vertical;
+  height: 100vh;
+}
+
+.container-book {
+  background-color: white;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
+  @extend %display-config-vertical;
+  height: 416px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 40px;
+  position: relative;
+  width: 900px;
+
+  &::after {
+    background: url(../assets/badge.png) no-repeat;
+    background-size: 100%;
+    content: '';
+    height: 120px;
+    left: 225px;
+    position: absolute;
+    top: 15px;
+    transform: rotate(15deg);
+    width: 70px;
+  }
+}
+
+.book-cover {
+  height: $container-book-elements-height;
+  margin-right: 30px;
+  width: 245px;
+}
+
+.book-information {
+  display: flex;
+  height: $container-book-elements-height;
+  flex-direction: column;
+}
+
+.title {
+  border-bottom: 4px solid $green;
+  color: $black;
+  @include font-config(32px, 700);
+  margin-bottom: 30px;
+  padding-bottom: 8px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.title-description {
+  color: $grey;
+  @include font-config(24px, 700);
+  line-height: 28px;
+}
+
+.detail {
+  color: $black;
+  @include font-config(20px, 700);
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.description {
+  color: $grey;
+  font-size: 20px;
+  line-height: 24px;
+}
+
