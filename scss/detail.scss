@@ -1,14 +1,10 @@
 @import "colors";
 
+$container-book-elements-height: 368px;
+
 %display-config-vertical {
   align-items: center;
   display: flex;
-}
-
-%container-book-elements-height {
-  height: 368px;
-  max-height: 100%;
-  height: 368px;
 }
 
 @mixin font-config($size, $weight) {
@@ -24,7 +20,6 @@
   background-color: $light-grey;
   @extend %display-config-vertical;
   height: 100vh;
-  justify-content: center;
 }
 
 .container-book {
@@ -32,20 +27,35 @@
   box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
   @extend %display-config-vertical;
   height: 416px;
-  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 100%;
   padding: 40px;
+  position: relative;
   width: 900px;
+
+  &::after {
+    background: url(../assets/badge.png) no-repeat;
+    background-size: 100%;
+    content: '';
+    height: 120px;
+    left: 225px;
+    position: absolute;
+    top: 15px;
+    transform: rotate(15deg);
+    width: 70px;
+  }
 }
 
 .book-cover {
-  @extend %container-book-elements-height;
+  height: $container-book-elements-height;
   margin-right: 30px;
+  width: 245px;
 }
 
 .book-information {
   display: flex;
-  @extend %container-book-elements-height;
-  flex-flow: column nowrap;
+  height: $container-book-elements-height;
+  flex-direction: column;
 }
 
 .title {
@@ -55,14 +65,13 @@
   margin-bottom: 30px;
   padding-bottom: 8px;
   width: 500px;
+  max-width: 100%;
 }
 
 .title-description {
   color: $grey;
   @include font-config(24px, 700);
-  height: 30px;
   line-height: 28px;
-  width: 98px;
 }
 
 .detail {
@@ -77,3 +86,4 @@
   font-size: 20px;
   line-height: 24px;
 }
+
