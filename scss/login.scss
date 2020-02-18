@@ -1,0 +1,68 @@
+@import "colors";
+
+%display-config-vertical {
+  align-items: center;
+  display: flex;
+}
+
+.general-login-container{
+	@extend %display-config-vertical;
+	height: 100vh;
+	justify-content: center;
+	max-height: 100%;
+}
+
+.container-login {
+	background-color: $light-grey;
+	border-top: 8px solid $blue;
+	@extend %display-config-vertical;
+	flex-direction: column;
+  height: 400px;
+  width: 300px;
+}
+
+.wolox-image-login {
+	max-width: 100%;
+	width: 200px;
+}
+
+.form-login {
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	justify-content: center;
+	width: 250px;
+}
+
+.form-item {
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-label-item {
+  margin-bottom: 10px;
+}
+
+.form-item-login {
+	background-color: $green;
+	border-radius: 5px;
+  color: white;
+	height: 30px;
+	margin: 20px 0 10px;
+}
+
+.separator {
+	background: $dark-grey;
+	height: 3px;
+	margin-bottom: 10px;
+}
+
+.form-item-signup {
+	border: 1px solid $green;
+	border-radius: 5px;
+	color: $green;
+	height: 30px;
+}
+
