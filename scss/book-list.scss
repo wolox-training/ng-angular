@@ -24,9 +24,7 @@
 .logout {
   color: $black;
   font-size: 18px;
-  height: 18px;
   line-height: 21px;
-  width: 63px;
   right: 30px;
 }
 
@@ -35,9 +33,7 @@
   background-color: $light-grey;
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
   justify-content: center;
-  overflow-y: scroll;
   padding-top: 100px;
 }
 
@@ -50,7 +46,7 @@
 }
 
 .book-list-img {
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 5px;
 }
 
@@ -75,7 +71,7 @@
 }
 
 .book-author {
-    color: $grey;
+  color: $grey;
   font-size: 14px;
   height: 14px;
   line-height: 18px;
