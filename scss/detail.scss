@@ -22,6 +22,30 @@ $container-book-elements-height: 368px;
   height: 100vh;
 }
 
+.container-button {
+  @extend %display-config-vertical;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+  position: relative;
+}
+
+.go-to-index {
+  font-size: 18px;
+  margin-bottom: 50px;
+  margin-left: 60px;
+  width: 100%;
+
+  &::before {
+    background: url(../assets/back-arrow-20.png) no-repeat;
+    content: "";
+    height: 22px;
+    width: 30px;
+    position: absolute;
+    left: 5px;
+  }
+}
+
 .container-book {
   background-color: white;
   box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
@@ -85,21 +109,5 @@ $container-book-elements-height: 368px;
   color: $grey;
   font-size: 20px;
   line-height: 24px;
-}
-
-.go-to-index {
-  font-size: 18px;
-  left: 420px;
-  position: absolute;
-  top: 150px;
-
-  &::before {
-    background: url(../assets/back-arrow-20.png) no-repeat;
-    content: "";
-    height: 22px;
-    position: absolute;
-    right: 40px;
-    width: 30px;
-  }
 }
 
