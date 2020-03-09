@@ -1,6 +1,10 @@
 @import "colors";
 
 $container-book-elements-height: 368px;
+$badge-height: 120px;
+$badge-width: 70px;
+$badge-height-media: calc(#{$badge-height} * 0.7);
+$badge-width-media: calc(#{$badge-width} * 0.7);
 
 %display-config-vertical {
   align-items: center;
@@ -61,12 +65,12 @@ $container-book-elements-height: 368px;
     background: url(../assets/badge.png) no-repeat;
     background-size: 100%;
     content: '';
-    height: 120px;
+    height: $badge-height;
     left: 225px;
     position: absolute;
     top: 15px;
     transform: rotate(15deg);
-    width: 70px;
+    width: $badge-width;
   }
 }
 
@@ -109,5 +113,85 @@ $container-book-elements-height: 368px;
   color: $grey;
   font-size: 20px;
   line-height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+
+  %display-config-vertical-media {
+    align-items: center;
+    display: flex;
+  }
+
+  .general-container {
+    height: 667px;
+    width: 376px;
+  }
+  
+  .container-button {
+    flex-direction: column-reverse;
+  }
+
+  .go-to-index {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-top: 30px;
+
+    &::before {
+      left: 125px;
+    }
+  }
+
+  .container-book {
+    flex-direction: column;
+    height: 570px;
+    width: 336px;
+
+    &::after {
+      height: $badge-height-media;
+      left: 230px;
+      top: 25px;
+      width: $badge-width-media;
+    }
+  }
+
+  .book-cover {
+    height: 298px;
+    width: 212px;
+    margin-right: 0;
+  }
+
+  .book-information {
+    margin-top: 20px;
+  }
+
+  .title {
+    height: 39px;
+    width: 300px;
+    @include font-config(16px, 700);
+    line-height: 38px;
+  }
+
+  .title-description {
+    height: 16px;
+    width: 98px;
+    @include font-config(16px, 700);
+    line-height: 19px;
+  }
+
+  .detail {
+    height: 22px;
+    @include font-config(14px, 700);
+    line-height: 24px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 24px;
+    height: 22px;
+  }
 }
 
