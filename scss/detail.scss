@@ -38,7 +38,6 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
   font-size: 18px;
   margin-bottom: 50px;
   margin-left: 60px;
-  width: 100%;
 
   &::before {
     background: url(../assets/back-arrow-20.png) no-repeat;
@@ -51,7 +50,7 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
 }
 
 .container-book {
-  background-color: white;
+  background-color: $white;
   box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
   @extend %display-config-vertical;
   height: 416px;
@@ -117,11 +116,6 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
 
 @media screen and (max-width: 1024px) {
 
-  %display-config-vertical-media {
-    align-items: center;
-    display: flex;
-  }
-
   .general-container {
     height: 667px;
     width: 376px;
@@ -132,8 +126,6 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
   }
 
   .go-to-index {
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
     margin-left: 0;
     margin-top: 30px;
@@ -167,21 +159,18 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
   }
 
   .title {
-    height: 39px;
     width: 300px;
     @include font-config(16px, 700);
     line-height: 38px;
   }
 
   .title-description {
-    height: 16px;
     width: 98px;
     @include font-config(16px, 700);
     line-height: 19px;
   }
 
   .detail {
-    height: 22px;
     @include font-config(14px, 700);
     line-height: 24px;
     margin-bottom: 20px;
