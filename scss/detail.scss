@@ -1,16 +1,5 @@
 @import "colors";
 
-$container-book-elements-height: 368px;
-$badge-height: 120px;
-$badge-width: 70px;
-$badge-height-media: calc(#{$badge-height} * 0.7);
-$badge-width-media: calc(#{$badge-width} * 0.7);
-
-%display-config-vertical {
-  align-items: center;
-  display: flex;
-}
-
 @mixin font-config($size, $weight) {
   font-size: $size;
   font-weight: $weight;
@@ -22,22 +11,27 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
 
 .general-container {
   background-color: $light-grey;
-  @extend %display-config-vertical;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: repeat(4, 25%);
+  height: 768px;
+  width: 1366px;
 }
 
 .container-button {
-  @extend %display-config-vertical;
-  flex-direction: column;
-  margin: 0 auto;
+  display: grid;
+  grid-column: 2/8;
+  grid-row: 1/4;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: repeat(6, 16.666%);
   position: relative;
 }
 
-.go-to-index {
-  align-self: flex-start;
-  font-size: 18px;
-  margin-bottom: 50px;
-  margin-left: 30px;
+.go-to-index { 
+  grid-row: 2/3;
+  margin-top: 40px;
+  margin-left: 24px;
+  position: relative;
 
   &::before {
     background: url(../assets/back-arrow-20.png) no-repeat;
@@ -45,44 +39,48 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
     height: 22px;
     width: 30px;
     position: absolute;
-    left: 5px;
+    left: -22px;
+    top: -2px;
   }
 }
 
 .container-book {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.5);
-  @extend %display-config-vertical;
-  height: 416px;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 40px;
+  display: grid;
+  grid-column: 1/9;
+  grid-row: 3/7;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 20px;
   position: relative;
-  width: 900px;
 
   &::after {
     background: url(../assets/badge.png) no-repeat;
     background-size: 100%;
     content: '';
-    height: $badge-height;
-    left: 225px;
+    height: 100px;
+    left: 255px;
     position: absolute;
-    top: 15px;
+    top: 10px;
     transform: rotate(15deg);
-    width: $badge-width;
+    width: 55px;
   }
 }
 
 .book-cover {
-  height: $container-book-elements-height;
-  margin-right: 30px;
-  width: 245px;
+  grid-column: 1/2;
+  grid-row: 1/4;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .book-information {
   display: flex;
-  height: $container-book-elements-height;
   flex-direction: column;
+  grid-column: 2/4;
+  grid-row: 1/4;
 }
 
 .title {
@@ -112,76 +110,5 @@ $badge-width-media: calc(#{$badge-width} * 0.7);
   color: $grey;
   font-size: 20px;
   line-height: 24px;
-}
-
-@media screen and (max-width: 1024px) {
-
-  .general-container {
-    height: 667px;
-    width: 376px;
-  }
-  
-  .container-button {
-    flex-direction: column-reverse;
-  }
-
-  .go-to-index {
-    margin-bottom: 20px;
-    margin-left: 0;
-    margin-top: 30px;
-    align-self: center;
-
-    &::before {
-      left: 125px;
-    }
-  }
-
-  .container-book {
-    flex-direction: column;
-    height: 570px;
-    width: 336px;
-
-    &::after {
-      height: $badge-height-media;
-      left: 230px;
-      top: 25px;
-      width: $badge-width-media;
-    }
-  }
-
-  .book-cover {
-    height: 298px;
-    width: 212px;
-    margin-right: 0;
-  }
-
-  .book-information {
-    margin-top: 20px;
-  }
-
-  .title {
-    width: 300px;
-    @include font-config(16px, 700);
-    line-height: 38px;
-  }
-
-  .title-description {
-    width: 98px;
-    @include font-config(16px, 700);
-    line-height: 19px;
-  }
-
-  .detail {
-    @include font-config(14px, 700);
-    line-height: 24px;
-    margin-bottom: 20px;
-    width: 300px;
-  }
-  
-  .description {
-    font-size: 14px;
-    line-height: 24px;
-    height: 22px;
-  }
 }
 
