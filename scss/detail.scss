@@ -1,8 +1,19 @@
 @import "colors";
 
+$badge-height: 100px;
+$badge-width: 60px;
+$badge-height-media: calc(#{$badge-height} * 0.7);
+$badge-width-media: calc(#{$badge-width} * 0.7);
+
 @mixin font-config($size, $weight) {
   font-size: $size;
   font-weight: $weight;
+}
+
+%detail {
+  color: $black;
+  @include font-config(20px, 700);
+  line-height: 24px;
 }
 
 * {
@@ -50,8 +61,8 @@
   display: grid;
   grid-column: 1/9;
   grid-row: 3/7;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   padding: 20px;
   position: relative;
 
@@ -59,12 +70,12 @@
     background: url(../assets/badge.png) no-repeat;
     background-size: 100%;
     content: '';
-    height: 100px;
+    height: $badge-height;
     left: 255px;
     position: absolute;
     top: 10px;
     transform: rotate(15deg);
-    width: 55px;
+    width: $badge-width;
   }
 }
 
@@ -76,39 +87,149 @@
   position: relative;
 }
 
-.book-information {
-  display: flex;
-  flex-direction: column;
-  grid-column: 2/4;
-  grid-row: 1/4;
-}
-
 .title {
   border-bottom: 4px solid $green;
   color: $black;
+  grid-column: 2/4;
+  grid-row: 1/2;
   @include font-config(32px, 700);
   margin-bottom: 30px;
+  max-width: 100%;
   padding-bottom: 8px;
   width: 500px;
-  max-width: 100%;
 }
 
 .title-description {
   color: $grey;
+  grid-column: 2/4;
+  grid-row: 1/2;
   @include font-config(24px, 700);
+  left: 230px;
   line-height: 28px;
+  position: relative;
+  top: 5px;
 }
 
-.detail {
-  color: $black;
-  @include font-config(20px, 700);
-  line-height: 24px;
-  margin-bottom: 40px;
+.detail-1 {
+  @extend %detail;
+  grid-column: 2/4;
+  grid-row: 2/3;
+}
+
+.detail-2 {
+  @extend %detail;
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
+
+.detail-3 {
+  @extend %detail;
+  grid-column: 2/4;
+  grid-row: 4/5;
 }
 
 .description {
   color: $grey;
   font-size: 20px;
   line-height: 24px;
+}
+
+@media screen and (max-width: 700px) {
+
+  %detail-smartphone {
+    grid-column: 1/7;
+    @include font-config(14px, 700);
+  }
+
+  .general-container {
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    height: 667px;
+    width: 376px;
+    padding: 25px;
+  }
+  
+  .container-button {
+    grid-column: 1/11;
+    grid-row: 1/11;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: repeat(8, 12.5%);
+  }
+
+  .go-to-index {
+    grid-column: 4/6;
+    grid-row: 8/9;
+  }
+
+  .container-book {
+    grid-column: 1/9;
+    grid-row: 1/8;
+    grid-template-columns: repeat(6, 16.66%);
+    grid-template-rows: repeat(9, 11.11%);
+    padding: 0 15px;
+
+    &::after {
+      height: $badge-height-media;
+      left: 230px;
+      top: 50px;
+      width: $badge-width-media;
+    }
+  }
+
+  .book-cover {
+    grid-column: 1/7;
+    grid-row: 2/6;
+    height: 271px;
+    margin: 0 auto;
+    width: 212px;
+  }
+
+  .title {
+    border: 0;
+    grid-column: 1/7;
+    grid-row: 1/2;
+    height: 39px;
+    @include font-config(24px, 700);
+    margin: 15px auto 0 auto;
+    max-width: 100%;
+    width: 165px;
+  }
+  
+  .title-description {
+    border-bottom: 4px solid $green;
+    color: $grey;
+    display: flex;
+    justify-content: center;
+    grid-column: 1/7;
+    grid-row: 6/7;
+    height: 16px;
+    @include font-config(16px, 700);
+    line-height: 19px;
+    position: static;
+    margin: 40px auto 0 auto;
+    padding-bottom: 35px;
+    width: 100%;
+  }
+
+  .detail-1 {
+    grid-row: 7/8;
+    @extend %detail-smartphone;
+    margin-top: 35px;
+  }
+  
+  .detail-2 {
+    grid-row: 8/9;
+    @extend %detail-smartphone;
+    margin-top: 20px;
+  }
+  
+  .detail-3 {
+    grid-row: 9/10;
+    @extend %detail-smartphone;
+  }
+  
+  .description {
+    font-size: 14px;
+  }
 }
 
