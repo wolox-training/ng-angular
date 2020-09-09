@@ -43,11 +43,16 @@
 }
 
 .book-detail-link {
-  background-color: white;
+  background-color: $white;
   box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
   height: 300px;
   margin: 20px 70px;
   width: 198px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s;
+  }
 }
 
 .book-list-img {
@@ -59,11 +64,6 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  
-  &:hover {
-    transform: scale(1.05);
-    transition: transform 0.2s;
-  }
 }
 
 .book-title {
